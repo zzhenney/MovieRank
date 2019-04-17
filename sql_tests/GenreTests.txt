@@ -1,0 +1,8 @@
+INSERT INTO Genre (gid, name)
+VALUES ('001', 'Action');
+
+INSERT INTO Genre (gid, name)
+VALUES ('002', 'Romance');
+
+INSERT INTO Genre (gid, name)
+VALUES ('003', 'Adventure');
