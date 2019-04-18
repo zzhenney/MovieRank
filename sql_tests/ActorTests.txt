@@ -1,0 +1,8 @@
+INSERT INTO Actor (aid, name, dob, age, thumbnail_url)
+VALUES ('01', 'Chris Evans', '06-13-1981', '37', 'https://test/photo1.png');
+
+INSERT INTO Actor (aid, name, dob, age, thumbnail_url)
+VALUES ('02', 'Robert Downey Jr', '04-04-1965', '54', 'https://test/photo2.png');
+
+INSERT INTO Actor (aid, name, dob, age, thumbnail_url)
+VALUES ('03', 'Chris Hemsworth', '08-11-1983', '35', 'https://test/photo3.png');
