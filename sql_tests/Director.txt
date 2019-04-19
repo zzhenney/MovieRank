@@ -1,0 +1,8 @@
+INSERT INTO Director (did, name)
+VALUES ('01', ‘ Steven Spielberg ’);
+
+INSERT INTO Director (did, name)
+VALUES ('02', 'Christopher Nolan');
+
+INSERT INTO Director (did, name)
+VALUES ('03', 'Martin Scorsese');
