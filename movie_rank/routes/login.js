@@ -8,7 +8,7 @@ const db = require(process.env.PWD + '/db.js')
 
 
 router.get('/', (req, res, next)=>{
-  res.render('register');
+  res.render('login');
 });
 
 // login user
