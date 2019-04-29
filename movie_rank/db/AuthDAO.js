@@ -1,4 +1,4 @@
-class RegisterDAO {
+class AuthDAO {
 
     constructor(db,username, password) {
          
@@ -45,6 +45,27 @@ class RegisterDAO {
             })
           })
     }
+
+    loginUser(){
+
+
+        return new Promise((resolve, reject)=>{
+             
+            this.db.any(`select * from users where username='${this.username}' and password='${this.password}'`)
+              .then((result)=>{
+                
+                  if(result.length > 0) resolve(true)
+                  else resolve(false)
+          })
+  
+          .catch((err)=>{
+                 console.log(err)
+                 reject(err)
+          })
+  
+  
+          })
+    }
 }
 
-module.exports = RegisterDAO
+module.exports = AuthDAO

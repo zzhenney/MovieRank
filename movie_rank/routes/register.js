@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const RegisterDAO = require(process.env.PWD+'/db/RegisterDAO')
+const AuthDAO = require(process.env.PWD+'/db/AuthDAO')
 const db = require(process.env.PWD + '/db.js')
 
 
@@ -21,8 +21,8 @@ router.post('/', (req, res)=>{
     const password = req.body.password
     console.log(username)
     console.log(password)
-    const register_dao = new RegisterDAO(db,username, password)
-    register_dao.checkIfUserExists()
+    const auth_dao = new AuthDAO(db,username, password)
+    auth_dao.checkIfUserExists()
     .then((hasUser)=>{
          
         if(hasUser){
@@ -32,7 +32,7 @@ router.post('/', (req, res)=>{
 
         else {
              
-              register_dao.registerUser()
+              auth_dao.registerUser()
               .then((data)=>{
                    
                  res.send('user successfully registered')
