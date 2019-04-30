@@ -3,7 +3,7 @@ const db = require('../db.js')
 
 const getMovie = (movieTitle) => {
 	console.log(process.env.DB_USER)
-	return db.any(`SELECT * FROM movie where movie.name LIKE '%${movieTitle}%'`)
+	return db.any(`SELECT * FROM movie where movie.name ILIKE '%${movieTitle}%'`)
 		.then(data => {
 			//issue with multiple movies of similar name
 			/*
