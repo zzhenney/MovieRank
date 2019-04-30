@@ -1,3 +1,8 @@
+if(process.env.NODE_ENV === 'development') {
+	require("dotenv").config();
+}
+
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -15,6 +20,8 @@ var app = express();
 const indexRouter = require('./routes/index')
 const authRouter = require('./routes/register')
 const loginRouter = require('./routes/login')
+const searchRouter = require('./routes/search')
+
 
 
 
@@ -35,6 +42,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use('/', indexRouter);
 app.use('/register', authRouter)
 app.use('/login', loginRouter)
+app.use('/search', searchRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
