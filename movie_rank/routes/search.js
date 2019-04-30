@@ -5,6 +5,7 @@ const db = require('../db/search.js')
 
 router.get('/:movieTitle', (req, res, next)=>{
 	const movieTitle = req.params.movieTitle
+	console.log(movieTitle)
 	db.getMovie(movieTitle)
 		.then(data => {
 			res.send(data)
