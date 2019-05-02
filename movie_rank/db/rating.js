@@ -7,6 +7,13 @@ const getRating = (mid) => {
 		})
 }
 
+const submitUserRating = (rating, uid, mid) => {
+	db.one(`INSERT INTO rating VALUES(default, ${rating}, ${uid}) RETURNING rid`)
+		.then(data => {
+			db.none(`INSERT INTO movieRating VALUES(${mid}, ${data.rid})`)
+		})
+}
 
 
-module.exports = { getRating }
+
+module.exports = { getRating, submitUserRating }
