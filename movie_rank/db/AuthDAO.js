@@ -7,7 +7,7 @@ class AuthDAO {
         this.password = password
     }
 
-    checkIfUserExists(){
+    checkIfUserExists() {
 
         return new Promise((resolve, reject)=>{
              

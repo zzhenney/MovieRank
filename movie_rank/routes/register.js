@@ -8,7 +8,7 @@ const db = require(process.env.PWD + '/db.js')
 
 
 router.get('/', (req, res, next)=>{
-  res.render('register');
+  res.render('register', {error:undefined});
 });
 
 
@@ -27,7 +27,7 @@ router.post('/', (req, res)=>{
          
         if(hasUser){
 
-            res.send('User already exists')
+            res.render('register', {error:'error'})
         }
 
         else {
@@ -52,5 +52,10 @@ router.post('/', (req, res)=>{
     })
     
 })
+
+
+// get login
+
+
 
 module.exports = router;

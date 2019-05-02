@@ -8,7 +8,7 @@ const db = require(process.env.PWD + '/db.js')
 
 
 router.get('/', (req, res, next)=>{
-  res.render('login');
+  res.render('login', {error:undefined});
 });
 
 // login user
@@ -30,7 +30,7 @@ router.post('/', (req, res)=>{
 
         else {
 
-            res.send('username or password do not match')
+            res.render('login',{error:'error'})
         }
     })
 })
