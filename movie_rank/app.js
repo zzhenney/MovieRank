@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const bodyParser = require('body-parser')
+const session = require('express-session')
 require('dotenv').config()
 
 
@@ -14,6 +15,8 @@ var app = express();
 const indexRouter = require('./routes/index')
 const authRouter = require('./routes/register')
 const loginRouter = require('./routes/login')
+const homeRouter = require('./routes/home')
+const logoutRouter = require('./routes/logout')
 
 
 
@@ -27,12 +30,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extended:true}))
+app.use(session({ secret: process.env.SECRET, resave: false,
+  saveUninitialized: true}))
 
 //routes
 
 app.use('/', indexRouter);
 app.use('/register', authRouter)
 app.use('/login', loginRouter)
+app.use('/home', homeRouter)
+app.use('/logout', logoutRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
