@@ -41,7 +41,13 @@ router.post('/', (req, res)=>{
               auth_dao.registerUser()
               .then((data)=>{
                    
-                 res.send('user successfully registered')
+                auth_dao.loginUser()
+                .then((responseObject)=>{
+                         req.session.user = {username: responseObject.user_name, user_id: responseObject.user_id}
+                        console.log(req.session.user)
+                        res.render('home', {user:req.session.user})
+                })
+
               })
               .catch((err)=>{
                   
