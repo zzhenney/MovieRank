@@ -8,7 +8,13 @@ const db = require(process.env.PWD + '/db.js')
 
 
 router.get('/', (req, res, next)=>{
-  res.render('register', {error:undefined});
+    if(req.session.user){
+
+        res.render('home', {user:req.session.user})
+    }
+    else {
+  res.render('register', {error:undefined})
+    }
 });
 
 
