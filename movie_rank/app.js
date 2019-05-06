@@ -21,6 +21,7 @@ const indexRouter = require('./routes/index')
 const authRouter = require('./routes/register')
 const loginRouter = require('./routes/login')
 const searchRouter = require('./routes/search')
+const profileRouter = require('./routes/profile')
 
 
 
@@ -40,9 +41,10 @@ app.use(bodyParser.urlencoded({extended:true}))
 //routes
 
 app.use('/', indexRouter);
-app.use('/register', authRouter)
-app.use('/login', loginRouter)
-app.use('/search', searchRouter)
+app.use('/profile', profileRouter);
+app.use('/register', authRouter);
+app.use('/login', loginRouter);
+app.use('/search', searchRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -65,7 +67,7 @@ app.use(function(err, req, res, next) {
 
 app.listen(process.env.PORT || 3000, ()=>{
      
-     console.log('Server Running ....')
+     console.log('Server is running on http://localhost:3000 or http://127.0.0.1:3000')
 })
 
 
