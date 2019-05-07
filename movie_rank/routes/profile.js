@@ -8,6 +8,8 @@ router.get('/', (req, res, next)=>{
   let username = req.query.username;
   console.log(username)
 
+  
+
   res.render("profile", {username: username});
 
 });

@@ -1,23 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <% include ./partials/head %>
 </head>
+
 <body class="container">
 
-<header>
-    <% include ./partials/header %>
-</header>
+    <header>
+        <% include ./partials/header %>
+    </header>
 
-<main>
-    <div>
-        <h1><%= username%></h1>
-    </div>
-</main>
+    <main>
+        <div class="container-fluid bg-1 text-center">
+            <h3 class="margin">Profile</h3>
+            <img src="profile.jpg" class="img-responsive img-circle margin" style="display:inline" alt="profile"
+                width="350" height="350">
+            <h3><%= username%></h3>
+        </div>
 
-<footer>
-    <% include ./partials/footer %>
-</footer>
+        <div class="container-fluid bg-3 text-center">
+            <h3 class="margin">Movie Rank</h3><br>
+            <div class="row">
+                <div class="col-sm-4">
+                    <img src="movie.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+                    <p>Name of movie</p>
+                    <p>Stars</p>
+                </div>
+                <div class="col-sm-4">
+                    <img src="movie.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+                    <p>Name of movie</p>
+                    <p>Stars</p>
+                </div>
+                <div class="col-sm-4">
+                    <img src="movie.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+                    <p>Name of movie</p>
+                    <p>Stars</p>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <% include ./partials/footer %>
+    </footer>
 
 </body>
+
 </html>
