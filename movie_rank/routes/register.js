@@ -8,7 +8,13 @@ const db = require(process.env.PWD + '/db.js')
 
 
 router.get('/', (req, res, next)=>{
-  res.render('register');
+    if(req.session.user){
+
+        res.render('home', {user:req.session.user})
+    }
+    else {
+  res.render('register', {error:undefined})
+    }
 });
 
 
@@ -27,7 +33,7 @@ router.post('/', (req, res)=>{
          
         if(hasUser){
 
-            res.send('User already exists')
+            res.render('register', {error:'error'})
         }
 
         else {
@@ -35,7 +41,13 @@ router.post('/', (req, res)=>{
               auth_dao.registerUser()
               .then((data)=>{
                    
-                 res.send('user successfully registered')
+                auth_dao.loginUser()
+                .then((responseObject)=>{
+                         req.session.user = {username: responseObject.user_name, user_id: responseObject.user_id}
+                        console.log(req.session.user)
+                        res.render('home', {user:req.session.user})
+                })
+
               })
               .catch((err)=>{
                   
@@ -52,5 +64,10 @@ router.post('/', (req, res)=>{
     })
     
 })
+
+
+// get login
+
+
 
 module.exports = router;

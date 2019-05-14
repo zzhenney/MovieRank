@@ -7,15 +7,19 @@ class AuthDAO {
         this.password = password
     }
 
-    checkIfUserExists(){
+    checkIfUserExists() {
 
         return new Promise((resolve, reject)=>{
              
           this.db.any(`select * from users where username=$1`, this.username)
             .then((result)=>{
               
-                if(result.length > 0) resolve(true)
-                else resolve(false)
+                if(result.length > 0){
+                    resolve(true)
+                } 
+                else {
+                    resolve(false)
+                } 
         })
 
         .catch((err)=>{
@@ -54,8 +58,8 @@ class AuthDAO {
             this.db.any(`select * from users where username='${this.username}' and password='${this.password}'`)
               .then((result)=>{
                 
-                  if(result.length > 0) resolve(true)
-                  else resolve(false)
+                  if(result.length > 0) resolve({value:true, user_id: result[0].uid, user_name: result[0].username})
+                  else resolve({value:false})
           })
   
           .catch((err)=>{
