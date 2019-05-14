@@ -12,8 +12,12 @@ router.get('/:movieTitle', (req, res, next)=>{
 	db.getMovie(movieTitle)
 		.then(data => {
 			//console.log(data)
-			data.user = 1
-			//console.log(data)
+			data.user = 0
+			if(req.session.user){
+				data.user = req.session.user
+			}
+			
+			console.log(data)
 			res.render('result', { data: data })
 			//res.send(data)
 		})

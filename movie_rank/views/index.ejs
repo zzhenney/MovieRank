@@ -25,7 +25,11 @@
           <h3 class="masthead-brand">MovieRank</h3>
           <nav class="nav nav-masthead justify-content-center">
             <a class="nav-link active" href="#">Home</a>
-            <a class="nav-link" href="#">Sign In</a>
+            <% if (user == 0) { %>
+              <a class="nav-link" href="/login">Sign In</a>
+            <% } else {%>
+              <a class="nav-link" href="/logout">Logout</a>
+            <% } %>
           </nav>
         </div>
       </header>

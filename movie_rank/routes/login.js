@@ -11,7 +11,7 @@ router.get('/', (req, res, next)=>{
 
     if(req.session.user){
         console.log(req.session.user)
-        res.render('home', {user: req.session.user})
+        res.render('index', {user: req.session.user})
     }
     else {
   res.render('login', {error:undefined});
@@ -33,7 +33,7 @@ router.post('/', (req, res, next)=>{
         if(responseObject.value){
             req.session.user = {username: responseObject.user_name, user_id: responseObject.user_id}
             console.log(req.session.user)
-            res.render('home', {user:req.session.user})
+            res.render('index', {user:req.session.user})
         }
 
         else {

@@ -6,7 +6,7 @@ router.get('/', (req, res, next)=>{
 
     req.session.destroy((err)=>{
           
-        res.render('login', {error:undefined})
+        res.render('index', {user: 0})
 
     })
 

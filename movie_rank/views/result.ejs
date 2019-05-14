@@ -24,7 +24,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">MovieRank</a>
+      <a class="navbar-brand" href="/">MovieRank</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -35,12 +35,16 @@
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Logout</a>
-          </li>
+          
+          <% if (data.user != 0) { %>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+            <% } else { %>
+              <li class="nav-item">
+                <a class="nav-link" href="/login">Login</a>
+              </li>
+            <% } %>
         </ul>
       </div>
     </div>
@@ -86,8 +90,6 @@
 
         <hr>
 
-        
-
       </div>
 
       <!-- Sidebar Widgets Column -->
@@ -107,21 +109,25 @@
             </div>
           </div>
         </form>
-        <form action='/rating' method='POST'>
-          <div class="card my-4">
-            <h5 class="card-header">Rate <%= data.name %></h5>
-            <div class="card-body">
-              <div class="input-group">
-                <input type="number" class="form-control" name='rating' placeholder="Enter Rating 1-10">
-                <input type="hidden" name='userId' value='<%= data.user %>'>
-                <input type="hidden" name='mid' value='<%= data.mid %>'>
-                <span class="input-group-btn">
-                  <button class="btn btn-secondary" type="button">Rate!</button>
-                </span>
+        <% if (data.user != 0) { %>
+          <form action='/rating' method='POST'>
+            <div class="card my-4">
+              <h5 class="card-header">Rate <%= data.name %></h5>
+              <div class="card-body">
+                <div class="input-group">
+                  <input type="number" class="form-control" name='rating' placeholder="Enter Rating 1-10">
+                  <input type="hidden" name='userId' value='<%= data.user %>'>
+                  <input type="hidden" name='mid' value='<%= data.mid %>'>
+                  <span class="input-group-btn">
+                    <button class="btn btn-secondary" type="button">Rate!</button>
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-        </form>
+          </form>
+        <% } %>
+       
+   
 
 
         
