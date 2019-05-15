@@ -12,6 +12,8 @@ router.get('/:movieTitle', (req, res, next)=>{
 	db.getMovie(movieTitle)
 		.then(data => {
 			//console.log(data)
+
+			//change to req.session.user.user_id
 			data.user = 0
 			if(req.session.user){
 				data.user = req.session.user

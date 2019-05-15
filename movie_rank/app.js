@@ -21,6 +21,7 @@ var app = express();
 const indexRouter = require('./routes/index')
 const authRouter = require('./routes/register')
 const loginRouter = require('./routes/login')
+const usersRouter = require('./routes/users')
 
 const searchRouter = require('./routes/search')
 const ratingRouter = require('./routes/rating')
@@ -58,6 +59,7 @@ app.use('/rating', ratingRouter)
 
 
 app.use('/home', homeRouter)
+app.use('/users', usersRouter)
 app.use('/logout', logoutRouter)
 
 

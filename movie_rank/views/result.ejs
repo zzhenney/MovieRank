@@ -110,21 +110,21 @@
           </div>
         </form>
         <% if (data.user != 0) { %>
-          <form action='/rating' method='POST'>
-            <div class="card my-4">
-              <h5 class="card-header">Rate <%= data.name %></h5>
-              <div class="card-body">
-                <div class="input-group">
-                  <input type="number" class="form-control" name='rating' placeholder="Enter Rating 1-10">
-                  <input type="hidden" name='userId' value='<%= data.user %>'>
-                  <input type="hidden" name='mid' value='<%= data.mid %>'>
-                  <span class="input-group-btn">
-                    <button class="btn btn-secondary" type="button">Rate!</button>
-                  </span>
-                </div>
+        <form action='/rating' method='POST'>
+          <div class="card my-4">
+            <h5 class="card-header">Rate <%= data.name %></h5>
+            <div class="card-body">
+              <div class="input-group">
+                <input type="number" class="form-control" name='rating' placeholder="Enter Rating 1-10" min='1' max='10'>
+                <input type="hidden" name='userId' value='<%= data.user.user_id %>'>
+                <input type="hidden" name='mid' value='<%= data.mid %>'>
+                <span class="input-group-btn">
+                  <button class="btn btn-secondary" type="submit">Rate!</button>
+                </span>
               </div>
             </div>
-          </form>
+          </div>
+        </form>
         <% } %>
        
    

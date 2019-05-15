@@ -1,3 +1,153 @@
-<h1> Home </h1>
-<h1> <%=user.username%> </h1>
-<h1> <%=user.user_id%> </h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>MovieRank <%= data.name %></title>
+
+  
+  <!-- Bootstrap core CSS -->
+  <link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="stylesheets/blog-post.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">MovieRank</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          
+          <% if (data.user != 0) { %>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+            <% } else { %>
+              <li class="nav-item">
+                <a class="nav-link" href="/login">Login</a>
+              </li>
+            <% } %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row mt-5">
+
+      <!-- Post Content Column -->
+      <div class="col-lg-8">
+
+        <!-- Title -->
+        <h1 class="mt-4"><%= data[0].username %></h1>
+
+        <!-- Author -->
+
+        <hr>
+
+        <!-- Preview Image -->
+        <h5>Update Avatar</h5>
+        <div class="row">
+		  <div class="col-sm-4 col-md-6">
+		    <div class="thumbnail">
+		      <img src="<%= data[0].thumbnail_url %>" width='242' height='200' alt="...">
+		      <div class="caption">
+		      	<br>
+		        <p><a href="#" class="btn btn-warning" role="button">Update</a> <a href="#" class="btn btn-danger" role="button">Delete</a></p>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<hr> 
+		<h5>Update Password</h5>
+    <form action='/users/update/password' method='POST'>
+  		<div class="row">
+  		  <div class="col-lg-6">
+  		    <div class="input-group">
+
+  		      <input type="text" name='password' class="form-control" placeholder="Enter new password...">
+  		      <span class="input-group-btn">
+  		        <button class="btn btn-warning" type="submit">Update</button>
+  		      </span>
+  		    </div><!-- /input-group -->
+  		  </div><!-- /.col-lg-6 -->
+  		</div><!-- /.row -->
+    </form>
+
+        <hr>
+
+        <!-- Post Content -->
+        <h5>Movies You Have Rated</h5>
+        <% for (var i = data.length - 1; i > 0; i--) { %>
+        	<form class="form-inline">
+			  <div class="form-group mb-2">
+			    <input type="text" readonly class="form-control-plaintext" id="<%= data[i].name %>" value="<%= data[i].name %>">
+			  </div>
+			  <div class="form-group my-4 mx-sm-4 mb-2">
+			    <input type="number" class="form-control" name='rating' placeholder="<%= data[i].rating %>" min='1' max='10'>
+			  </div>
+			  <button type="submit" value='update' class="my-4 btn btn-warning mb-2">Update</button>
+			  <button type="submit" value='delete' class="my-4 btn btn-danger mb-2">Delete</button>
+
+			</form>
+        	
+		<% } %>
+      
+
+      </div>
+
+       
+
+      </div>
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; MovieRank 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+  <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"></script>
+  <script src="https://getbootstrap.com/docs/4.1/dist/js/bootstrap.min.js"></script>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
+
