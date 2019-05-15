@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "node app.js",
     "start:dev": "NODE_ENV=development DEBUG=movie-rank:* nodemon ./bin/www"
   },
   "dependencies": {
