@@ -8,12 +8,19 @@ const db = require(process.env.PWD + '/db.js')
 
 
 router.get('/', (req, res, next)=>{
-  res.render('login');
+
+    if(req.session.user){
+        console.log(req.session.user)
+        res.render('index', {user: req.session.user})
+    }
+    else {
+  res.render('login', {error:undefined});
+    }
 });
 
 // login user
 
-router.post('/', (req, res)=>{
+router.post('/', (req, res, next)=>{
       
     const username = req.body.username
     const password = req.body.password
@@ -21,16 +28,16 @@ router.post('/', (req, res)=>{
     console.log(password)
     const auth_dao = new AuthDAO(db,username, password)
     auth_dao.loginUser()
-    .then((hasUser)=>{
+    .then((responseObject)=>{
          
-        if(hasUser){
-
-            res.send('Login success')
+        if(responseObject.value){
+            req.session.user = {username: responseObject.user_name, user_id: responseObject.user_id}
+            console.log(req.session.user)
+            res.render('index', {user:req.session.user})
         }
 
         else {
-
-            res.send('username or password do not match')
+            res.render('login',{error:'error'})
         }
     })
 })
