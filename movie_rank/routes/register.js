@@ -43,7 +43,7 @@ router.post('/', (req, res)=>{
                    
                 auth_dao.loginUser()
                 .then((responseObject)=>{
-                         req.session.user = {username: responseObject.user_name, user_id: responseObject.user_id}
+                        req.session.user = {username: responseObject.user_name, user_id: responseObject.user_id}
                         console.log(req.session.user)
                         res.render('index', {user:req.session.user})
                 })

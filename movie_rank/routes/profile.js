@@ -11,16 +11,17 @@ router.get('/', (req, res, next)=>{
     if (req.session.user) {
     	//db.getUserRatings(req.session.user.user_id)
     	let userData = []
-        userDB.getUserProfile(1)
+        userId = req.session.user.user_id
+        userDB.getUserProfile(userId)
     		.then(data => {
     			userData.push(data)
                 console.log(userData)
-    			ratingDB.getUserRatings(1)
+    			ratingDB.getUserRatings(userId)
     				.then(data => {
                         for (var i = data.length - 1; i >= 0; i--) {
                             userData.push(data[i])
                         }
-    					res.render('home', {data: userData});
+    					res.render('profile', {data: userData});
     				})
     			
     		})
@@ -31,7 +32,7 @@ router.get('/', (req, res, next)=>{
     }
 
     else {
-        res.render('home', {error:undefined})
+        res.redirect('/')
     }
 
   });

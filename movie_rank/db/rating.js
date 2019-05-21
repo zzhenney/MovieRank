@@ -8,10 +8,10 @@ const getRating = (mid) => {
 }
 
 const submitUserRating = (rating, uid, mid) => {
-	db.any(`SELECT * FROM rating WHERE rating.uid = ${uid}`)
+	db.any(`SELECT * FROM rating, movierating WHERE rating.uid = ${uid} AND rating.rid = movierating.rid AND movierating.mid = ${mid}`)
 		.then(data => {
 			if(data.length > 0){
-				//send as error to front end
+				console.log(data)
 				console.log('You have already submitted review for this movie')
 			}
 
@@ -38,6 +38,30 @@ const getUserRatings = (uid) => {
 	})
 }
 
+const deleteUserRating = (uid, rid) => {
+	console.log(`uid: ${uid}    rid: ${rid}`)
+	db.one(`DELETE FROM rating WHERE rating.uid = ${uid} AND rating.rid = ${rid}`)
+		.then(()=> {
+			return
+		})
+		.catch(err => {
+			console.log(err)
+		})
+}
+
+const updateUserRating = (uid, rid, rating) => {
+	//console.log(`uid: ${uid}    rid: ${rid}`)
+	db.one(`UPDATE rating SET rating=${rating} WHERE rating.uid = ${uid} AND rating.rid = ${rid}`)
+		.then(()=> {
+			return
+		})
+		.catch(err => {
+			console.log(err)
+		})
+}
 
 
-module.exports = { getRating, submitUserRating, getUserRatings }
+
+module.exports = { getRating, submitUserRating, getUserRatings, deleteUserRating, updateUserRating }
+
+

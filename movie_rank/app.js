@@ -3,6 +3,7 @@ if(process.env.NODE_ENV === 'development') {
 }
 
 
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -11,6 +12,7 @@ var logger = require('morgan');
 
 const bodyParser = require('body-parser')
 const session = require('express-session')
+
 require('dotenv').config()
 
 
@@ -28,7 +30,7 @@ const ratingRouter = require('./routes/rating')
 
 
 
-const homeRouter = require('./routes/home')
+const profileRouter = require('./routes/profile')
 const logoutRouter = require('./routes/logout')
 
 
@@ -45,7 +47,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(bodyParser.urlencoded({extended:true}))
-app.use(session({ secret: process.env.SECRET, resave: false,
+app.use(session({ secret: "qweiurqwe92", resave: false,
   saveUninitialized: true}))
 
 //routes
@@ -58,7 +60,7 @@ app.use('/search', searchRouter)
 app.use('/rating', ratingRouter)
 
 
-app.use('/home', homeRouter)
+app.use('/profile', profileRouter)
 app.use('/users', usersRouter)
 app.use('/logout', logoutRouter)
 
@@ -80,12 +82,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.send(err);
 });
-
-
-app.listen(process.env.PORT || 3000, ()=>{
-     
-     console.log('Server Running ....')
-})
 
 
 module.exports = app;

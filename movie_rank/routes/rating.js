@@ -13,6 +13,21 @@ router.post('/', (req, res, next) => {
 	res.redirect('back')
 })
 
+router.post('/delete', (req, res, next) => {
+	const userId = req.session.user.user_id
+	const rid = req.body.rid
+	db.deleteUserRating(userId, rid)
+	res.redirect('back')
+})
+
+router.post('/update', (req, res, next) => {
+	const userId = req.session.user.user_id
+	const rating = req.body.rating
+	const rid = req.body.rid
+	db.updateUserRating(userId, rid, rating)
+	res.redirect('back')
+})
+
 
 
 module.exports = router;

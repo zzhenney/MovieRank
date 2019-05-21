@@ -18,4 +18,24 @@ const updatePassword = (uid, pass) => {
 		})
 }
 
-module.exports = { getUserProfile, updatePassword }
+const deleteAvatar = (uid) => {
+	db.one(`UPDATE users SET thumbnail_url = 'NULL' WHERE uid = ${uid}`)
+		.then(() => {
+			return
+		})
+		.catch(err => {
+			console.log(err)
+		})
+}
+
+const updateAvatar = (uid, url) => {
+	db.one(`UPDATE users SET thumbnail_url = '${url}' WHERE uid = ${uid}`)
+		.then(() => {
+			return
+		})
+		.catch(err => {
+			console.log(err)
+		})
+}
+
+module.exports = { getUserProfile, updatePassword, deleteAvatar, updateAvatar }

@@ -68,67 +68,75 @@
         <!-- Preview Image -->
         <h5>Update Avatar</h5>
         <div class="row">
-		  <div class="col-sm-4 col-md-6">
-		    <div class="thumbnail">
-		      <img src="<%= data[0].thumbnail_url %>" width='242' height='200' alt="...">
-		      <div class="caption">
-		      	<br>
-		        <p><a href="#" class="btn btn-warning" role="button">Update</a> <a href="#" class="btn btn-danger" role="button">Delete</a></p>
-		      </div>
-		    </div>
-		  </div>
-		</div>
+    		  <div class="col-lg-6">
+    		    <div class="thumbnail">
+            <% if (data[0].thumbnail_url != 'NULL') { %>
+    		      <img src="<%= data[0].thumbnail_url %>" width='242' height='200' alt="...">
+            <% } %>
+    		      <div class="caption">
+    		      	<br>
+    		        <form class="form-inline" action='/users/update/avatar' method='POST'>
+                  
+                  <div class="form-group">
+                    <input type="text" class="form-control" name='avatar_url' placeholder="<%= data[0].thumbnail_url %>">
+                    <button type="submit" value='update' class="my-4 btn btn-warning mb-2">Update</button>
+                    <button type="submit" value='delete' formaction='/users/delete/avatar' class="my-4 btn btn-danger mb-2">Delete</button>
+                  </div>
+                </form>
+    		      </div>
+    		    </div>
+    		  </div>
+    		</div>
 
-		<hr> 
-		<h5>Update Password</h5>
-    <form action='/users/update/password' method='POST'>
-  		<div class="row">
-  		  <div class="col-lg-6">
-  		    <div class="input-group">
+    		<hr> 
+    		<h5>Update Password</h5>
+        <form action='/users/update/password' method='POST'>
+      		<div class="row">
+      		  <div class="col-lg-6">
+      		    <div class="input-group">
 
-  		      <input type="text" name='password' class="form-control" placeholder="Enter new password...">
-  		      <span class="input-group-btn">
-  		        <button class="btn btn-warning" type="submit">Update</button>
-  		      </span>
-  		    </div><!-- /input-group -->
-  		  </div><!-- /.col-lg-6 -->
-  		</div><!-- /.row -->
-    </form>
+      		      <input type="text" name='password' class="form-control" placeholder="Enter new password...">
+      		      <span class="input-group-btn">
+      		        <button class="btn btn-warning" type="submit">Update</button>
+      		      </span>
+      		    </div><!-- /input-group -->
+      		  </div><!-- /.col-lg-6 -->
+      		</div><!-- /.row -->
+        </form>
 
         <hr>
 
         <!-- Post Content -->
         <h5>Movies You Have Rated</h5>
         <% for (var i = data.length - 1; i > 0; i--) { %>
-        	<form class="form-inline">
-			  <div class="form-group mb-2">
-			    <input type="text" readonly class="form-control-plaintext" id="<%= data[i].name %>" value="<%= data[i].name %>">
-			  </div>
-			  <div class="form-group my-4 mx-sm-4 mb-2">
-			    <input type="number" class="form-control" name='rating' placeholder="<%= data[i].rating %>" min='1' max='10'>
-			  </div>
-			  <button type="submit" value='update' class="my-4 btn btn-warning mb-2">Update</button>
-			  <button type="submit" value='delete' class="my-4 btn btn-danger mb-2">Delete</button>
-
-			</form>
-        	
-		<% } %>
+        <form class="form-inline" action='/rating/update' method='POST'>
+    		  <div class="form-group mb-2">
+    		    <input type="text" readonly class="form-control-plaintext" id="<%= data[i].rid %>" value="<%= data[i].name %>">
+    		  </div>
+    		  <div class="form-group my-4 mx-sm-4 mb-2">
+    		    <input type="number" class="form-control" name='rating' placeholder="<%= data[i].rating %>" min='1' max='10'>
+            <input type="hidden" name="rid" value="<%= data[i].rid %>">
+    		  </div>
+    		  <button type="submit" value='update' class="my-4 btn btn-warning mb-2">Update</button>
+    		  <button type="submit" value='delete' formaction='/rating/delete' class="my-4 btn btn-danger mb-2">Delete</button>
+    	  </form>
+        <% } %>
       
 
+      
       </div>
-
-       
-
-      </div>
-
-    </div>
-    <!-- /.row -->
-
-  </div>
-  <!-- /.container -->
-
+    </div> <!-- /.row -->
+  </div> <!-- /.container -->
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
   <!-- Footer -->
-  <footer class="py-5 bg-dark">
+  <footer class="py-4 bg-dark fixed-bottom">
     <div class="container">
       <p class="m-0 text-center text-white">Copyright &copy; MovieRank 2019</p>
     </div>

@@ -13,13 +13,22 @@ router.post('/update/password', function(req, res, next) {
 	password = req.body.password
 	console.log(`new password: ${password}`)
 	db.updatePassword(userId, password)
-		.then(()=> {
-			res.redirect('back')
-		})
-		.catch(err => {
-			console.log(err)
-		})
-	
+	res.redirect('back')
+
+})
+
+router.post('/delete/avatar', function(req, res, next) {
+	userId = req.session.user.user_id
+	db.deleteAvatar(userId)
+	res.redirect('back')
+
+})
+
+router.post('/update/avatar', function(req, res, next) {
+	userId = req.session.user.user_id
+	url = req.body.avatar_url
+	db.updateAvatar(userId, url)
+	res.redirect('back')
 
 })
 
