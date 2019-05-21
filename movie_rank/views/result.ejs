@@ -125,14 +125,14 @@
               </div>
             </div>
           </div>
+          
         </form>
         <% } %>
-       
-   
-
-
-        
-
+        <% if(messages.length > 0){ %>
+          <div class="alert alert-danger" role="alert">
+            <%=messages%>
+          </div>
+        <% } %>
       </div>
 
     </div>

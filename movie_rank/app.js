@@ -9,6 +9,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var flash = require('connect-flash');
 
 const bodyParser = require('body-parser')
 const session = require('express-session')
@@ -49,6 +50,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(session({ secret: "qweiurqwe92", resave: false,
   saveUninitialized: true}))
+app.use(flash());
+
 
 //routes
 

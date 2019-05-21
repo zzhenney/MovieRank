@@ -11,17 +11,16 @@ router.get('/:movieTitle', (req, res, next)=>{
 	const movieTitle = req.params.movieTitle
 	db.getMovie(movieTitle)
 		.then(data => {
-			//console.log(data)
-
 			//change to req.session.user.user_id
 			data.user = 0
 			if(req.session.user){
 				data.user = req.session.user
 			}
-			
-			console.log(data)
-			res.render('result', { data: data })
-			//res.send(data)
+
+			res.render('result', { data: data,
+								   messages: req.flash('messages') 
+			});
+
 		})
 });
 

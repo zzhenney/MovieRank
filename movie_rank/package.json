@@ -1,7 +1,7 @@
 {
   "name": "movie-rank",
   "version": "0.0.0",
-  "engines": { 
+  "engines": {
     "node": "8.12.0",
     "npm": "6.4.1"
   },
@@ -10,11 +10,11 @@
     "start": "node ./bin/www",
     "start:dev": "NODE_ENV=development DEBUG=movie-rank:* nodemon ./bin/www",
     "heroku-postbuild": "npm install"
-
   },
   "dependencies": {
     "body-parser": "^1.19.0",
     "browserify": "^16.2.3",
+    "connect-flash": "^0.1.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "dotenv": "^7.0.0",
