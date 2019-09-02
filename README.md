@@ -6,4 +6,4 @@ Movie Rank is a simple, easy to use movie rating and information website that on
 
 Built with Node.js, Express, Bootstrap, and PostgresRDS
 
-For codebase, navigate to /movierank
+For codebase, navigate to /movie_rank
