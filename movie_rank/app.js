@@ -1,4 +1,4 @@
-if(process.env.NODE_ENV === 'development') {
+if(process.env.NODE_ENV === 'development' || "test") {
 	require("dotenv").config();
 }
 
@@ -14,7 +14,7 @@ var flash = require('connect-flash');
 const bodyParser = require('body-parser')
 const session = require('express-session')
 
-require('dotenv').config()
+//require('dotenv').config()
 
 
 
@@ -40,8 +40,14 @@ const logoutRouter = require('./routes/logout')
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+if (process.env.NODE_ENV !== 'test'){
+  app.use(logger('dev'));
+}
+//remove console logs during tests
+else{
+  console.log = function(){}
+}
 
-app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
