@@ -9,11 +9,13 @@
   "scripts": {
     "start": "node ./bin/www",
     "start:dev": "NODE_ENV=development DEBUG=movie-rank:* nodemon ./bin/www",
-    "heroku-postbuild": "npm install"
+    "heroku-postbuild": "npm install",
+    "test": "NODE_ENV=test mocha 'test/**/*.js'"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
     "browserify": "^16.2.3",
+    "chai": "^4.2.0",
     "connect-flash": "^0.1.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
@@ -22,9 +24,11 @@
     "express": "~4.16.0",
     "express-session": "^1.16.1",
     "http-errors": "~1.6.2",
+    "mocha": "^7.0.1",
     "morgan": "~1.9.0",
     "nodemon": "^1.18.11",
     "pg-promise": "^8.6.5",
-    "pug": "2.0.0-beta11"
+    "pug": "2.0.0-beta11",
+    "supertest": "^4.0.2"
   }
 }
