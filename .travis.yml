@@ -11,6 +11,9 @@ before_install:
   npm i -g mocha;
   npm i chai;
 
+install:
+  npm install;
+
 before_script:
   cd movie_rank;
   createdb -U postgres MovieRank_Test;
