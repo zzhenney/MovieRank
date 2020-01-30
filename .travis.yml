@@ -4,7 +4,7 @@ services:
   - postgresql
 
 before_install:
-  createdb MovieRank_Test
-  psql MovieRank_Test < movie_rank/test/db.sql
+  createdb MovieRank_Test;
+  psql MovieRank_Test < movie_rank/test/db.sql;
 
 script: npm test
