@@ -6,21 +6,20 @@ node_js:
 services:
   - postgresql
 
-before_install:
-  npm i -g npm@6.4.1;
-  npm i -g mocha;
-  npm i chai;
+
+before_script:
+  cd movie_rank;
+  createdb -U postgres MovieRank_Test;
+  psql MovieRank_Test < test/db.sql;
 
 install:
+  cd movie_rank;
   npm install;
  
 cache:
   directories:
     - "node_modules"
 
-before_script:
-  cd movie_rank;
-  createdb -U postgres MovieRank_Test;
-  psql MovieRank_Test < test/db.sql;
+
 
 
