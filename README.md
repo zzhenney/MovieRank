@@ -1,6 +1,6 @@
 # MovieRank
 
-https://travis-ci.com/zzhenney/MovieRank.svg?branch=refactor
+[![Build Status](https://travis-ci.com/zzhenney/MovieRank.svg?branch=master)](https://travis-ci.com/zzhenney/MovieRank)
 
 Built with Node.js, Express, Bootstrap, and PostgresRDS
 
