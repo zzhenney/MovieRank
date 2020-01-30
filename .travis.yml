@@ -1,9 +1,13 @@
 language: node_js
 
+node_js:
+  -8
+
 services:
   - postgresql
 
 before_install:
+  npm i -g npm@6.4.1
   cd movie_rank;
   createdb MovieRank_Test;
   psql MovieRank_Test < test/db.sql;
