@@ -1,0 +1,9 @@
+language: node_js
+
+services:
+  - postgresql
+
+before_install:
+  psql MovieRank_Test < test/db.sql
+
+script: npm test
