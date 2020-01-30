@@ -9,7 +9,7 @@ services:
 before_install:
   npm i -g npm@6.4.1;
   cd movie_rank;
-  createdb MovieRank_Test;
+  createdb -U postgres MovieRank_Test;
   psql MovieRank_Test < test/db.sql;
 
 
