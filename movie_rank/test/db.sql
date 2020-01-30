@@ -16,20 +16,20 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- Name: movierank; Type: SCHEMA; Schema: -; Owner: zachenney
+-- Name: movierank; Type: SCHEMA; Schema: -; Owner: postgres
 --
 
 CREATE SCHEMA movierank;
 
 
-ALTER SCHEMA movierank OWNER TO zachenney;
+ALTER SCHEMA movierank OWNER TO postgres;
 
 SET default_tablespace = '';
 
 SET default_with_oids = false;
 
 --
--- Name: actor; Type: TABLE; Schema: movierank; Owner: zachenney
+-- Name: actor; Type: TABLE; Schema: movierank; Owner: postgres
 --
 
 CREATE TABLE movierank.actor (
@@ -40,10 +40,10 @@ CREATE TABLE movierank.actor (
 );
 
 
-ALTER TABLE movierank.actor OWNER TO zachenney;
+ALTER TABLE movierank.actor OWNER TO postgres;
 
 --
--- Name: actor_aid_seq; Type: SEQUENCE; Schema: movierank; Owner: zachenney
+-- Name: actor_aid_seq; Type: SEQUENCE; Schema: movierank; Owner: postgres
 --
 
 CREATE SEQUENCE movierank.actor_aid_seq
@@ -54,17 +54,17 @@ CREATE SEQUENCE movierank.actor_aid_seq
     CACHE 1;
 
 
-ALTER TABLE movierank.actor_aid_seq OWNER TO zachenney;
+ALTER TABLE movierank.actor_aid_seq OWNER TO postgres;
 
 --
--- Name: actor_aid_seq; Type: SEQUENCE OWNED BY; Schema: movierank; Owner: zachenney
+-- Name: actor_aid_seq; Type: SEQUENCE OWNED BY; Schema: movierank; Owner: postgres
 --
 
 ALTER SEQUENCE movierank.actor_aid_seq OWNED BY movierank.actor.aid;
 
 
 --
--- Name: director; Type: TABLE; Schema: movierank; Owner: zachenney
+-- Name: director; Type: TABLE; Schema: movierank; Owner: postgres
 --
 
 CREATE TABLE movierank.director (
@@ -73,10 +73,10 @@ CREATE TABLE movierank.director (
 );
 
 
-ALTER TABLE movierank.director OWNER TO zachenney;
+ALTER TABLE movierank.director OWNER TO postgres;
 
 --
--- Name: director_did_seq; Type: SEQUENCE; Schema: movierank; Owner: zachenney
+-- Name: director_did_seq; Type: SEQUENCE; Schema: movierank; Owner: postgres
 --
 
 CREATE SEQUENCE movierank.director_did_seq
@@ -87,17 +87,17 @@ CREATE SEQUENCE movierank.director_did_seq
     CACHE 1;
 
 
-ALTER TABLE movierank.director_did_seq OWNER TO zachenney;
+ALTER TABLE movierank.director_did_seq OWNER TO postgres;
 
 --
--- Name: director_did_seq; Type: SEQUENCE OWNED BY; Schema: movierank; Owner: zachenney
+-- Name: director_did_seq; Type: SEQUENCE OWNED BY; Schema: movierank; Owner: postgres
 --
 
 ALTER SEQUENCE movierank.director_did_seq OWNED BY movierank.director.did;
 
 
 --
--- Name: genre; Type: TABLE; Schema: movierank; Owner: zachenney
+-- Name: genre; Type: TABLE; Schema: movierank; Owner: postgres
 --
 
 CREATE TABLE movierank.genre (
@@ -106,10 +106,10 @@ CREATE TABLE movierank.genre (
 );
 
 
-ALTER TABLE movierank.genre OWNER TO zachenney;
+ALTER TABLE movierank.genre OWNER TO postgres;
 
 --
--- Name: genre_gid_seq; Type: SEQUENCE; Schema: movierank; Owner: zachenney
+-- Name: genre_gid_seq; Type: SEQUENCE; Schema: movierank; Owner: postgres
 --
 
 CREATE SEQUENCE movierank.genre_gid_seq
@@ -120,17 +120,17 @@ CREATE SEQUENCE movierank.genre_gid_seq
     CACHE 1;
 
 
-ALTER TABLE movierank.genre_gid_seq OWNER TO zachenney;
+ALTER TABLE movierank.genre_gid_seq OWNER TO postgres;
 
 --
--- Name: genre_gid_seq; Type: SEQUENCE OWNED BY; Schema: movierank; Owner: zachenney
+-- Name: genre_gid_seq; Type: SEQUENCE OWNED BY; Schema: movierank; Owner: postgres
 --
 
 ALTER SEQUENCE movierank.genre_gid_seq OWNED BY movierank.genre.gid;
 
 
 --
--- Name: movie; Type: TABLE; Schema: movierank; Owner: zachenney
+-- Name: movie; Type: TABLE; Schema: movierank; Owner: postgres
 --
 
 CREATE TABLE movierank.movie (
@@ -146,10 +146,10 @@ CREATE TABLE movierank.movie (
 );
 
 
-ALTER TABLE movierank.movie OWNER TO zachenney;
+ALTER TABLE movierank.movie OWNER TO postgres;
 
 --
--- Name: movie_mid_seq; Type: SEQUENCE; Schema: movierank; Owner: zachenney
+-- Name: movie_mid_seq; Type: SEQUENCE; Schema: movierank; Owner: postgres
 --
 
 CREATE SEQUENCE movierank.movie_mid_seq
@@ -160,17 +160,17 @@ CREATE SEQUENCE movierank.movie_mid_seq
     CACHE 1;
 
 
-ALTER TABLE movierank.movie_mid_seq OWNER TO zachenney;
+ALTER TABLE movierank.movie_mid_seq OWNER TO postgres;
 
 --
--- Name: movie_mid_seq; Type: SEQUENCE OWNED BY; Schema: movierank; Owner: zachenney
+-- Name: movie_mid_seq; Type: SEQUENCE OWNED BY; Schema: movierank; Owner: postgres
 --
 
 ALTER SEQUENCE movierank.movie_mid_seq OWNED BY movierank.movie.mid;
 
 
 --
--- Name: movieactor; Type: TABLE; Schema: movierank; Owner: zachenney
+-- Name: movieactor; Type: TABLE; Schema: movierank; Owner: postgres
 --
 
 CREATE TABLE movierank.movieactor (
@@ -179,10 +179,10 @@ CREATE TABLE movierank.movieactor (
 );
 
 
-ALTER TABLE movierank.movieactor OWNER TO zachenney;
+ALTER TABLE movierank.movieactor OWNER TO postgres;
 
 --
--- Name: movierating; Type: TABLE; Schema: movierank; Owner: zachenney
+-- Name: movierating; Type: TABLE; Schema: movierank; Owner: postgres
 --
 
 CREATE TABLE movierank.movierating (
@@ -191,10 +191,10 @@ CREATE TABLE movierank.movierating (
 );
 
 
-ALTER TABLE movierank.movierating OWNER TO zachenney;
+ALTER TABLE movierank.movierating OWNER TO postgres;
 
 --
--- Name: rating; Type: TABLE; Schema: movierank; Owner: zachenney
+-- Name: rating; Type: TABLE; Schema: movierank; Owner: postgres
 --
 
 CREATE TABLE movierank.rating (
@@ -204,10 +204,10 @@ CREATE TABLE movierank.rating (
 );
 
 
-ALTER TABLE movierank.rating OWNER TO zachenney;
+ALTER TABLE movierank.rating OWNER TO postgres;
 
 --
--- Name: rating_rid_seq; Type: SEQUENCE; Schema: movierank; Owner: zachenney
+-- Name: rating_rid_seq; Type: SEQUENCE; Schema: movierank; Owner: postgres
 --
 
 CREATE SEQUENCE movierank.rating_rid_seq
@@ -218,17 +218,17 @@ CREATE SEQUENCE movierank.rating_rid_seq
     CACHE 1;
 
 
-ALTER TABLE movierank.rating_rid_seq OWNER TO zachenney;
+ALTER TABLE movierank.rating_rid_seq OWNER TO postgres;
 
 --
--- Name: rating_rid_seq; Type: SEQUENCE OWNED BY; Schema: movierank; Owner: zachenney
+-- Name: rating_rid_seq; Type: SEQUENCE OWNED BY; Schema: movierank; Owner: postgres
 --
 
 ALTER SEQUENCE movierank.rating_rid_seq OWNED BY movierank.rating.rid;
 
 
 --
--- Name: user; Type: TABLE; Schema: movierank; Owner: zachenney
+-- Name: user; Type: TABLE; Schema: movierank; Owner: postgres
 --
 
 CREATE TABLE movierank."user" (
@@ -239,10 +239,10 @@ CREATE TABLE movierank."user" (
 );
 
 
-ALTER TABLE movierank."user" OWNER TO zachenney;
+ALTER TABLE movierank."user" OWNER TO postgres;
 
 --
--- Name: user_uid_seq; Type: SEQUENCE; Schema: movierank; Owner: zachenney
+-- Name: user_uid_seq; Type: SEQUENCE; Schema: movierank; Owner: postgres
 --
 
 CREATE SEQUENCE movierank.user_uid_seq
@@ -253,17 +253,17 @@ CREATE SEQUENCE movierank.user_uid_seq
     CACHE 1;
 
 
-ALTER TABLE movierank.user_uid_seq OWNER TO zachenney;
+ALTER TABLE movierank.user_uid_seq OWNER TO postgres;
 
 --
--- Name: user_uid_seq; Type: SEQUENCE OWNED BY; Schema: movierank; Owner: zachenney
+-- Name: user_uid_seq; Type: SEQUENCE OWNED BY; Schema: movierank; Owner: postgres
 --
 
 ALTER SEQUENCE movierank.user_uid_seq OWNED BY movierank."user".uid;
 
 
 --
--- Name: actor; Type: TABLE; Schema: public; Owner: zachenney
+-- Name: actor; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.actor (
@@ -274,10 +274,10 @@ CREATE TABLE public.actor (
 );
 
 
-ALTER TABLE public.actor OWNER TO zachenney;
+ALTER TABLE public.actor OWNER TO postgres;
 
 --
--- Name: actor_aid_seq; Type: SEQUENCE; Schema: public; Owner: zachenney
+-- Name: actor_aid_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.actor_aid_seq
@@ -288,17 +288,17 @@ CREATE SEQUENCE public.actor_aid_seq
     CACHE 1;
 
 
-ALTER TABLE public.actor_aid_seq OWNER TO zachenney;
+ALTER TABLE public.actor_aid_seq OWNER TO postgres;
 
 --
--- Name: actor_aid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: zachenney
+-- Name: actor_aid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.actor_aid_seq OWNED BY public.actor.aid;
 
 
 --
--- Name: director; Type: TABLE; Schema: public; Owner: zachenney
+-- Name: director; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.director (
@@ -307,10 +307,10 @@ CREATE TABLE public.director (
 );
 
 
-ALTER TABLE public.director OWNER TO zachenney;
+ALTER TABLE public.director OWNER TO postgres;
 
 --
--- Name: director_did_seq; Type: SEQUENCE; Schema: public; Owner: zachenney
+-- Name: director_did_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.director_did_seq
@@ -321,17 +321,17 @@ CREATE SEQUENCE public.director_did_seq
     CACHE 1;
 
 
-ALTER TABLE public.director_did_seq OWNER TO zachenney;
+ALTER TABLE public.director_did_seq OWNER TO postgres;
 
 --
--- Name: director_did_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: zachenney
+-- Name: director_did_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.director_did_seq OWNED BY public.director.did;
 
 
 --
--- Name: genre; Type: TABLE; Schema: public; Owner: zachenney
+-- Name: genre; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.genre (
@@ -340,10 +340,10 @@ CREATE TABLE public.genre (
 );
 
 
-ALTER TABLE public.genre OWNER TO zachenney;
+ALTER TABLE public.genre OWNER TO postgres;
 
 --
--- Name: genre_gid_seq; Type: SEQUENCE; Schema: public; Owner: zachenney
+-- Name: genre_gid_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.genre_gid_seq
@@ -354,17 +354,17 @@ CREATE SEQUENCE public.genre_gid_seq
     CACHE 1;
 
 
-ALTER TABLE public.genre_gid_seq OWNER TO zachenney;
+ALTER TABLE public.genre_gid_seq OWNER TO postgres;
 
 --
--- Name: genre_gid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: zachenney
+-- Name: genre_gid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.genre_gid_seq OWNED BY public.genre.gid;
 
 
 --
--- Name: movie; Type: TABLE; Schema: public; Owner: zachenney
+-- Name: movie; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.movie (
@@ -379,10 +379,10 @@ CREATE TABLE public.movie (
 );
 
 
-ALTER TABLE public.movie OWNER TO zachenney;
+ALTER TABLE public.movie OWNER TO postgres;
 
 --
--- Name: movie_mid_seq; Type: SEQUENCE; Schema: public; Owner: zachenney
+-- Name: movie_mid_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.movie_mid_seq
@@ -393,17 +393,17 @@ CREATE SEQUENCE public.movie_mid_seq
     CACHE 1;
 
 
-ALTER TABLE public.movie_mid_seq OWNER TO zachenney;
+ALTER TABLE public.movie_mid_seq OWNER TO postgres;
 
 --
--- Name: movie_mid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: zachenney
+-- Name: movie_mid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.movie_mid_seq OWNED BY public.movie.mid;
 
 
 --
--- Name: movieactor; Type: TABLE; Schema: public; Owner: zachenney
+-- Name: movieactor; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.movieactor (
@@ -412,10 +412,10 @@ CREATE TABLE public.movieactor (
 );
 
 
-ALTER TABLE public.movieactor OWNER TO zachenney;
+ALTER TABLE public.movieactor OWNER TO postgres;
 
 --
--- Name: moviegenre; Type: TABLE; Schema: public; Owner: zachenney
+-- Name: moviegenre; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.moviegenre (
@@ -424,10 +424,10 @@ CREATE TABLE public.moviegenre (
 );
 
 
-ALTER TABLE public.moviegenre OWNER TO zachenney;
+ALTER TABLE public.moviegenre OWNER TO postgres;
 
 --
--- Name: movierating; Type: TABLE; Schema: public; Owner: zachenney
+-- Name: movierating; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.movierating (
@@ -436,10 +436,10 @@ CREATE TABLE public.movierating (
 );
 
 
-ALTER TABLE public.movierating OWNER TO zachenney;
+ALTER TABLE public.movierating OWNER TO postgres;
 
 --
--- Name: rating; Type: TABLE; Schema: public; Owner: zachenney
+-- Name: rating; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.rating (
@@ -449,10 +449,10 @@ CREATE TABLE public.rating (
 );
 
 
-ALTER TABLE public.rating OWNER TO zachenney;
+ALTER TABLE public.rating OWNER TO postgres;
 
 --
--- Name: rating_rid_seq; Type: SEQUENCE; Schema: public; Owner: zachenney
+-- Name: rating_rid_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.rating_rid_seq
@@ -463,17 +463,17 @@ CREATE SEQUENCE public.rating_rid_seq
     CACHE 1;
 
 
-ALTER TABLE public.rating_rid_seq OWNER TO zachenney;
+ALTER TABLE public.rating_rid_seq OWNER TO postgres;
 
 --
--- Name: rating_rid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: zachenney
+-- Name: rating_rid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.rating_rid_seq OWNED BY public.rating.rid;
 
 
 --
--- Name: user; Type: TABLE; Schema: public; Owner: zachenney
+-- Name: user; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public."user" (
@@ -484,10 +484,10 @@ CREATE TABLE public."user" (
 );
 
 
-ALTER TABLE public."user" OWNER TO zachenney;
+ALTER TABLE public."user" OWNER TO postgres;
 
 --
--- Name: user_uid_seq; Type: SEQUENCE; Schema: public; Owner: zachenney
+-- Name: user_uid_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.user_uid_seq
@@ -498,17 +498,17 @@ CREATE SEQUENCE public.user_uid_seq
     CACHE 1;
 
 
-ALTER TABLE public.user_uid_seq OWNER TO zachenney;
+ALTER TABLE public.user_uid_seq OWNER TO postgres;
 
 --
--- Name: user_uid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: zachenney
+-- Name: user_uid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.user_uid_seq OWNED BY public."user".uid;
 
 
 --
--- Name: users; Type: TABLE; Schema: public; Owner: zachenney
+-- Name: users; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.users (
@@ -519,10 +519,10 @@ CREATE TABLE public.users (
 );
 
 
-ALTER TABLE public.users OWNER TO zachenney;
+ALTER TABLE public.users OWNER TO postgres;
 
 --
--- Name: users_uid_seq; Type: SEQUENCE; Schema: public; Owner: zachenney
+-- Name: users_uid_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.users_uid_seq
@@ -533,108 +533,108 @@ CREATE SEQUENCE public.users_uid_seq
     CACHE 1;
 
 
-ALTER TABLE public.users_uid_seq OWNER TO zachenney;
+ALTER TABLE public.users_uid_seq OWNER TO postgres;
 
 --
--- Name: users_uid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: zachenney
+-- Name: users_uid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.users_uid_seq OWNED BY public.users.uid;
 
 
 --
--- Name: actor aid; Type: DEFAULT; Schema: movierank; Owner: zachenney
+-- Name: actor aid; Type: DEFAULT; Schema: movierank; Owner: postgres
 --
 
 ALTER TABLE ONLY movierank.actor ALTER COLUMN aid SET DEFAULT nextval('movierank.actor_aid_seq'::regclass);
 
 
 --
--- Name: director did; Type: DEFAULT; Schema: movierank; Owner: zachenney
+-- Name: director did; Type: DEFAULT; Schema: movierank; Owner: postgres
 --
 
 ALTER TABLE ONLY movierank.director ALTER COLUMN did SET DEFAULT nextval('movierank.director_did_seq'::regclass);
 
 
 --
--- Name: genre gid; Type: DEFAULT; Schema: movierank; Owner: zachenney
+-- Name: genre gid; Type: DEFAULT; Schema: movierank; Owner: postgres
 --
 
 ALTER TABLE ONLY movierank.genre ALTER COLUMN gid SET DEFAULT nextval('movierank.genre_gid_seq'::regclass);
 
 
 --
--- Name: movie mid; Type: DEFAULT; Schema: movierank; Owner: zachenney
+-- Name: movie mid; Type: DEFAULT; Schema: movierank; Owner: postgres
 --
 
 ALTER TABLE ONLY movierank.movie ALTER COLUMN mid SET DEFAULT nextval('movierank.movie_mid_seq'::regclass);
 
 
 --
--- Name: rating rid; Type: DEFAULT; Schema: movierank; Owner: zachenney
+-- Name: rating rid; Type: DEFAULT; Schema: movierank; Owner: postgres
 --
 
 ALTER TABLE ONLY movierank.rating ALTER COLUMN rid SET DEFAULT nextval('movierank.rating_rid_seq'::regclass);
 
 
 --
--- Name: user uid; Type: DEFAULT; Schema: movierank; Owner: zachenney
+-- Name: user uid; Type: DEFAULT; Schema: movierank; Owner: postgres
 --
 
 ALTER TABLE ONLY movierank."user" ALTER COLUMN uid SET DEFAULT nextval('movierank.user_uid_seq'::regclass);
 
 
 --
--- Name: actor aid; Type: DEFAULT; Schema: public; Owner: zachenney
+-- Name: actor aid; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.actor ALTER COLUMN aid SET DEFAULT nextval('public.actor_aid_seq'::regclass);
 
 
 --
--- Name: director did; Type: DEFAULT; Schema: public; Owner: zachenney
+-- Name: director did; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.director ALTER COLUMN did SET DEFAULT nextval('public.director_did_seq'::regclass);
 
 
 --
--- Name: genre gid; Type: DEFAULT; Schema: public; Owner: zachenney
+-- Name: genre gid; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.genre ALTER COLUMN gid SET DEFAULT nextval('public.genre_gid_seq'::regclass);
 
 
 --
--- Name: movie mid; Type: DEFAULT; Schema: public; Owner: zachenney
+-- Name: movie mid; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.movie ALTER COLUMN mid SET DEFAULT nextval('public.movie_mid_seq'::regclass);
 
 
 --
--- Name: rating rid; Type: DEFAULT; Schema: public; Owner: zachenney
+-- Name: rating rid; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.rating ALTER COLUMN rid SET DEFAULT nextval('public.rating_rid_seq'::regclass);
 
 
 --
--- Name: user uid; Type: DEFAULT; Schema: public; Owner: zachenney
+-- Name: user uid; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public."user" ALTER COLUMN uid SET DEFAULT nextval('public.user_uid_seq'::regclass);
 
 
 --
--- Name: users uid; Type: DEFAULT; Schema: public; Owner: zachenney
+-- Name: users uid; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.users ALTER COLUMN uid SET DEFAULT nextval('public.users_uid_seq'::regclass);
 
 
 --
--- Data for Name: actor; Type: TABLE DATA; Schema: movierank; Owner: zachenney
+-- Data for Name: actor; Type: TABLE DATA; Schema: movierank; Owner: postgres
 --
 
 COPY movierank.actor (aid, name, dob, thumbnail_url) FROM stdin;
@@ -643,7 +643,7 @@ COPY movierank.actor (aid, name, dob, thumbnail_url) FROM stdin;
 
 
 --
--- Data for Name: director; Type: TABLE DATA; Schema: movierank; Owner: zachenney
+-- Data for Name: director; Type: TABLE DATA; Schema: movierank; Owner: postgres
 --
 
 COPY movierank.director (did, name) FROM stdin;
@@ -651,7 +651,7 @@ COPY movierank.director (did, name) FROM stdin;
 
 
 --
--- Data for Name: genre; Type: TABLE DATA; Schema: movierank; Owner: zachenney
+-- Data for Name: genre; Type: TABLE DATA; Schema: movierank; Owner: postgres
 --
 
 COPY movierank.genre (gid, name) FROM stdin;
@@ -660,7 +660,7 @@ COPY movierank.genre (gid, name) FROM stdin;
 
 
 --
--- Data for Name: movie; Type: TABLE DATA; Schema: movierank; Owner: zachenney
+-- Data for Name: movie; Type: TABLE DATA; Schema: movierank; Owner: postgres
 --
 
 COPY movierank.movie (mid, name, release_date, mpaa_rating, runtime, description, thumbnail_url, gid, did) FROM stdin;
@@ -668,7 +668,7 @@ COPY movierank.movie (mid, name, release_date, mpaa_rating, runtime, description
 
 
 --
--- Data for Name: movieactor; Type: TABLE DATA; Schema: movierank; Owner: zachenney
+-- Data for Name: movieactor; Type: TABLE DATA; Schema: movierank; Owner: postgres
 --
 
 COPY movierank.movieactor (aid, mid) FROM stdin;
@@ -676,7 +676,7 @@ COPY movierank.movieactor (aid, mid) FROM stdin;
 
 
 --
--- Data for Name: movierating; Type: TABLE DATA; Schema: movierank; Owner: zachenney
+-- Data for Name: movierating; Type: TABLE DATA; Schema: movierank; Owner: postgres
 --
 
 COPY movierank.movierating (mid, rid) FROM stdin;
@@ -684,7 +684,7 @@ COPY movierank.movierating (mid, rid) FROM stdin;
 
 
 --
--- Data for Name: rating; Type: TABLE DATA; Schema: movierank; Owner: zachenney
+-- Data for Name: rating; Type: TABLE DATA; Schema: movierank; Owner: postgres
 --
 
 COPY movierank.rating (rid, rating, uid) FROM stdin;
@@ -692,7 +692,7 @@ COPY movierank.rating (rid, rating, uid) FROM stdin;
 
 
 --
--- Data for Name: user; Type: TABLE DATA; Schema: movierank; Owner: zachenney
+-- Data for Name: user; Type: TABLE DATA; Schema: movierank; Owner: postgres
 --
 
 COPY movierank."user" (uid, username, password, thumbnail_url) FROM stdin;
@@ -700,7 +700,7 @@ COPY movierank."user" (uid, username, password, thumbnail_url) FROM stdin;
 
 
 --
--- Data for Name: actor; Type: TABLE DATA; Schema: public; Owner: zachenney
+-- Data for Name: actor; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.actor (aid, name, dob, thumbnail_url) FROM stdin;
@@ -712,7 +712,7 @@ COPY public.actor (aid, name, dob, thumbnail_url) FROM stdin;
 
 
 --
--- Data for Name: director; Type: TABLE DATA; Schema: public; Owner: zachenney
+-- Data for Name: director; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.director (did, name) FROM stdin;
@@ -723,7 +723,7 @@ COPY public.director (did, name) FROM stdin;
 
 
 --
--- Data for Name: genre; Type: TABLE DATA; Schema: public; Owner: zachenney
+-- Data for Name: genre; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.genre (gid, name) FROM stdin;
@@ -734,7 +734,7 @@ COPY public.genre (gid, name) FROM stdin;
 
 
 --
--- Data for Name: movie; Type: TABLE DATA; Schema: public; Owner: zachenney
+-- Data for Name: movie; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.movie (mid, name, release_date, mpaa_rating, runtime, description, thumbnail_url, did) FROM stdin;
@@ -746,7 +746,7 @@ COPY public.movie (mid, name, release_date, mpaa_rating, runtime, description, t
 
 
 --
--- Data for Name: movieactor; Type: TABLE DATA; Schema: public; Owner: zachenney
+-- Data for Name: movieactor; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.movieactor (aid, mid) FROM stdin;
@@ -759,7 +759,7 @@ COPY public.movieactor (aid, mid) FROM stdin;
 
 
 --
--- Data for Name: moviegenre; Type: TABLE DATA; Schema: public; Owner: zachenney
+-- Data for Name: moviegenre; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.moviegenre (mid, gid) FROM stdin;
@@ -779,7 +779,7 @@ COPY public.moviegenre (mid, gid) FROM stdin;
 
 
 --
--- Data for Name: movierating; Type: TABLE DATA; Schema: public; Owner: zachenney
+-- Data for Name: movierating; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.movierating (mid, rid) FROM stdin;
@@ -792,7 +792,7 @@ COPY public.movierating (mid, rid) FROM stdin;
 
 
 --
--- Data for Name: rating; Type: TABLE DATA; Schema: public; Owner: zachenney
+-- Data for Name: rating; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.rating (rid, rating, uid) FROM stdin;
@@ -806,7 +806,7 @@ COPY public.rating (rid, rating, uid) FROM stdin;
 
 
 --
--- Data for Name: user; Type: TABLE DATA; Schema: public; Owner: zachenney
+-- Data for Name: user; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public."user" (uid, username, password, thumbnail_url) FROM stdin;
@@ -814,7 +814,7 @@ COPY public."user" (uid, username, password, thumbnail_url) FROM stdin;
 
 
 --
--- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: zachenney
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.users (uid, username, password, thumbnail_url) FROM stdin;
@@ -828,98 +828,98 @@ COPY public.users (uid, username, password, thumbnail_url) FROM stdin;
 
 
 --
--- Name: actor_aid_seq; Type: SEQUENCE SET; Schema: movierank; Owner: zachenney
+-- Name: actor_aid_seq; Type: SEQUENCE SET; Schema: movierank; Owner: postgres
 --
 
 SELECT pg_catalog.setval('movierank.actor_aid_seq', 1, true);
 
 
 --
--- Name: director_did_seq; Type: SEQUENCE SET; Schema: movierank; Owner: zachenney
+-- Name: director_did_seq; Type: SEQUENCE SET; Schema: movierank; Owner: postgres
 --
 
 SELECT pg_catalog.setval('movierank.director_did_seq', 1, true);
 
 
 --
--- Name: genre_gid_seq; Type: SEQUENCE SET; Schema: movierank; Owner: zachenney
+-- Name: genre_gid_seq; Type: SEQUENCE SET; Schema: movierank; Owner: postgres
 --
 
 SELECT pg_catalog.setval('movierank.genre_gid_seq', 1, true);
 
 
 --
--- Name: movie_mid_seq; Type: SEQUENCE SET; Schema: movierank; Owner: zachenney
+-- Name: movie_mid_seq; Type: SEQUENCE SET; Schema: movierank; Owner: postgres
 --
 
 SELECT pg_catalog.setval('movierank.movie_mid_seq', 1, true);
 
 
 --
--- Name: rating_rid_seq; Type: SEQUENCE SET; Schema: movierank; Owner: zachenney
+-- Name: rating_rid_seq; Type: SEQUENCE SET; Schema: movierank; Owner: postgres
 --
 
 SELECT pg_catalog.setval('movierank.rating_rid_seq', 1, true);
 
 
 --
--- Name: user_uid_seq; Type: SEQUENCE SET; Schema: movierank; Owner: zachenney
+-- Name: user_uid_seq; Type: SEQUENCE SET; Schema: movierank; Owner: postgres
 --
 
 SELECT pg_catalog.setval('movierank.user_uid_seq', 1, true);
 
 
 --
--- Name: actor_aid_seq; Type: SEQUENCE SET; Schema: public; Owner: zachenney
+-- Name: actor_aid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.actor_aid_seq', 4, true);
 
 
 --
--- Name: director_did_seq; Type: SEQUENCE SET; Schema: public; Owner: zachenney
+-- Name: director_did_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.director_did_seq', 3, true);
 
 
 --
--- Name: genre_gid_seq; Type: SEQUENCE SET; Schema: public; Owner: zachenney
+-- Name: genre_gid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.genre_gid_seq', 3, true);
 
 
 --
--- Name: movie_mid_seq; Type: SEQUENCE SET; Schema: public; Owner: zachenney
+-- Name: movie_mid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.movie_mid_seq', 4, true);
 
 
 --
--- Name: rating_rid_seq; Type: SEQUENCE SET; Schema: public; Owner: zachenney
+-- Name: rating_rid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.rating_rid_seq', 114, true);
 
 
 --
--- Name: user_uid_seq; Type: SEQUENCE SET; Schema: public; Owner: zachenney
+-- Name: user_uid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.user_uid_seq', 1, true);
 
 
 --
--- Name: users_uid_seq; Type: SEQUENCE SET; Schema: public; Owner: zachenney
+-- Name: users_uid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.users_uid_seq', 6, true);
 
 
 --
--- Name: actor idx_43004_primary; Type: CONSTRAINT; Schema: movierank; Owner: zachenney
+-- Name: actor idx_43004_primary; Type: CONSTRAINT; Schema: movierank; Owner: postgres
 --
 
 ALTER TABLE ONLY movierank.actor
@@ -927,7 +927,7 @@ ALTER TABLE ONLY movierank.actor
 
 
 --
--- Name: director idx_43010_primary; Type: CONSTRAINT; Schema: movierank; Owner: zachenney
+-- Name: director idx_43010_primary; Type: CONSTRAINT; Schema: movierank; Owner: postgres
 --
 
 ALTER TABLE ONLY movierank.director
@@ -935,7 +935,7 @@ ALTER TABLE ONLY movierank.director
 
 
 --
--- Name: genre idx_43016_primary; Type: CONSTRAINT; Schema: movierank; Owner: zachenney
+-- Name: genre idx_43016_primary; Type: CONSTRAINT; Schema: movierank; Owner: postgres
 --
 
 ALTER TABLE ONLY movierank.genre
@@ -943,7 +943,7 @@ ALTER TABLE ONLY movierank.genre
 
 
 --
--- Name: movie idx_43022_primary; Type: CONSTRAINT; Schema: movierank; Owner: zachenney
+-- Name: movie idx_43022_primary; Type: CONSTRAINT; Schema: movierank; Owner: postgres
 --
 
 ALTER TABLE ONLY movierank.movie
@@ -951,7 +951,7 @@ ALTER TABLE ONLY movierank.movie
 
 
 --
--- Name: rating idx_43034_primary; Type: CONSTRAINT; Schema: movierank; Owner: zachenney
+-- Name: rating idx_43034_primary; Type: CONSTRAINT; Schema: movierank; Owner: postgres
 --
 
 ALTER TABLE ONLY movierank.rating
@@ -959,7 +959,7 @@ ALTER TABLE ONLY movierank.rating
 
 
 --
--- Name: user idx_43040_primary; Type: CONSTRAINT; Schema: movierank; Owner: zachenney
+-- Name: user idx_43040_primary; Type: CONSTRAINT; Schema: movierank; Owner: postgres
 --
 
 ALTER TABLE ONLY movierank."user"
@@ -967,7 +967,7 @@ ALTER TABLE ONLY movierank."user"
 
 
 --
--- Name: user idx_43266_primary; Type: CONSTRAINT; Schema: public; Owner: zachenney
+-- Name: user idx_43266_primary; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public."user"
@@ -975,7 +975,7 @@ ALTER TABLE ONLY public."user"
 
 
 --
--- Name: actor idx_43349_primary; Type: CONSTRAINT; Schema: public; Owner: zachenney
+-- Name: actor idx_43349_primary; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.actor
@@ -983,7 +983,7 @@ ALTER TABLE ONLY public.actor
 
 
 --
--- Name: director idx_43355_primary; Type: CONSTRAINT; Schema: public; Owner: zachenney
+-- Name: director idx_43355_primary; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.director
@@ -991,7 +991,7 @@ ALTER TABLE ONLY public.director
 
 
 --
--- Name: genre idx_43361_primary; Type: CONSTRAINT; Schema: public; Owner: zachenney
+-- Name: genre idx_43361_primary; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.genre
@@ -999,7 +999,7 @@ ALTER TABLE ONLY public.genre
 
 
 --
--- Name: movie idx_43367_primary; Type: CONSTRAINT; Schema: public; Owner: zachenney
+-- Name: movie idx_43367_primary; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.movie
@@ -1007,7 +1007,7 @@ ALTER TABLE ONLY public.movie
 
 
 --
--- Name: rating idx_43385_primary; Type: CONSTRAINT; Schema: public; Owner: zachenney
+-- Name: rating idx_43385_primary; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.rating
@@ -1015,7 +1015,7 @@ ALTER TABLE ONLY public.rating
 
 
 --
--- Name: users idx_43391_primary; Type: CONSTRAINT; Schema: public; Owner: zachenney
+-- Name: users idx_43391_primary; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.users
@@ -1023,224 +1023,224 @@ ALTER TABLE ONLY public.users
 
 
 --
--- Name: idx_43004_aid_unique; Type: INDEX; Schema: movierank; Owner: zachenney
+-- Name: idx_43004_aid_unique; Type: INDEX; Schema: movierank; Owner: postgres
 --
 
 CREATE UNIQUE INDEX idx_43004_aid_unique ON movierank.actor USING btree (aid);
 
 
 --
--- Name: idx_43010_did_unique; Type: INDEX; Schema: movierank; Owner: zachenney
+-- Name: idx_43010_did_unique; Type: INDEX; Schema: movierank; Owner: postgres
 --
 
 CREATE UNIQUE INDEX idx_43010_did_unique ON movierank.director USING btree (did);
 
 
 --
--- Name: idx_43016_gid_unique; Type: INDEX; Schema: movierank; Owner: zachenney
+-- Name: idx_43016_gid_unique; Type: INDEX; Schema: movierank; Owner: postgres
 --
 
 CREATE UNIQUE INDEX idx_43016_gid_unique ON movierank.genre USING btree (gid);
 
 
 --
--- Name: idx_43022_did_idx; Type: INDEX; Schema: movierank; Owner: zachenney
+-- Name: idx_43022_did_idx; Type: INDEX; Schema: movierank; Owner: postgres
 --
 
 CREATE INDEX idx_43022_did_idx ON movierank.movie USING btree (did);
 
 
 --
--- Name: idx_43022_gid_idx; Type: INDEX; Schema: movierank; Owner: zachenney
+-- Name: idx_43022_gid_idx; Type: INDEX; Schema: movierank; Owner: postgres
 --
 
 CREATE INDEX idx_43022_gid_idx ON movierank.movie USING btree (gid);
 
 
 --
--- Name: idx_43022_mid_unique; Type: INDEX; Schema: movierank; Owner: zachenney
+-- Name: idx_43022_mid_unique; Type: INDEX; Schema: movierank; Owner: postgres
 --
 
 CREATE UNIQUE INDEX idx_43022_mid_unique ON movierank.movie USING btree (mid);
 
 
 --
--- Name: idx_43026_aid_idx; Type: INDEX; Schema: movierank; Owner: zachenney
+-- Name: idx_43026_aid_idx; Type: INDEX; Schema: movierank; Owner: postgres
 --
 
 CREATE INDEX idx_43026_aid_idx ON movierank.movieactor USING btree (aid);
 
 
 --
--- Name: idx_43026_mid_idx; Type: INDEX; Schema: movierank; Owner: zachenney
+-- Name: idx_43026_mid_idx; Type: INDEX; Schema: movierank; Owner: postgres
 --
 
 CREATE INDEX idx_43026_mid_idx ON movierank.movieactor USING btree (mid);
 
 
 --
--- Name: idx_43029_mid_idx; Type: INDEX; Schema: movierank; Owner: zachenney
+-- Name: idx_43029_mid_idx; Type: INDEX; Schema: movierank; Owner: postgres
 --
 
 CREATE INDEX idx_43029_mid_idx ON movierank.movierating USING btree (mid);
 
 
 --
--- Name: idx_43029_rid_idx; Type: INDEX; Schema: movierank; Owner: zachenney
+-- Name: idx_43029_rid_idx; Type: INDEX; Schema: movierank; Owner: postgres
 --
 
 CREATE INDEX idx_43029_rid_idx ON movierank.movierating USING btree (rid);
 
 
 --
--- Name: idx_43034_rid_unique; Type: INDEX; Schema: movierank; Owner: zachenney
+-- Name: idx_43034_rid_unique; Type: INDEX; Schema: movierank; Owner: postgres
 --
 
 CREATE UNIQUE INDEX idx_43034_rid_unique ON movierank.rating USING btree (rid);
 
 
 --
--- Name: idx_43034_uid_idx; Type: INDEX; Schema: movierank; Owner: zachenney
+-- Name: idx_43034_uid_idx; Type: INDEX; Schema: movierank; Owner: postgres
 --
 
 CREATE INDEX idx_43034_uid_idx ON movierank.rating USING btree (uid);
 
 
 --
--- Name: idx_43040_uid_unique; Type: INDEX; Schema: movierank; Owner: zachenney
+-- Name: idx_43040_uid_unique; Type: INDEX; Schema: movierank; Owner: postgres
 --
 
 CREATE UNIQUE INDEX idx_43040_uid_unique ON movierank."user" USING btree (uid);
 
 
 --
--- Name: idx_43040_username_unique; Type: INDEX; Schema: movierank; Owner: zachenney
+-- Name: idx_43040_username_unique; Type: INDEX; Schema: movierank; Owner: postgres
 --
 
 CREATE UNIQUE INDEX idx_43040_username_unique ON movierank."user" USING btree (username);
 
 
 --
--- Name: idx_43266_uid_unique; Type: INDEX; Schema: public; Owner: zachenney
+-- Name: idx_43266_uid_unique; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE UNIQUE INDEX idx_43266_uid_unique ON public."user" USING btree (uid);
 
 
 --
--- Name: idx_43266_username_unique; Type: INDEX; Schema: public; Owner: zachenney
+-- Name: idx_43266_username_unique; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE UNIQUE INDEX idx_43266_username_unique ON public."user" USING btree (username);
 
 
 --
--- Name: idx_43349_aid_unique; Type: INDEX; Schema: public; Owner: zachenney
+-- Name: idx_43349_aid_unique; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE UNIQUE INDEX idx_43349_aid_unique ON public.actor USING btree (aid);
 
 
 --
--- Name: idx_43355_did_unique; Type: INDEX; Schema: public; Owner: zachenney
+-- Name: idx_43355_did_unique; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE UNIQUE INDEX idx_43355_did_unique ON public.director USING btree (did);
 
 
 --
--- Name: idx_43361_gid_unique; Type: INDEX; Schema: public; Owner: zachenney
+-- Name: idx_43361_gid_unique; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE UNIQUE INDEX idx_43361_gid_unique ON public.genre USING btree (gid);
 
 
 --
--- Name: idx_43367_did_idx; Type: INDEX; Schema: public; Owner: zachenney
+-- Name: idx_43367_did_idx; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX idx_43367_did_idx ON public.movie USING btree (did);
 
 
 --
--- Name: idx_43367_mid_unique; Type: INDEX; Schema: public; Owner: zachenney
+-- Name: idx_43367_mid_unique; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE UNIQUE INDEX idx_43367_mid_unique ON public.movie USING btree (mid);
 
 
 --
--- Name: idx_43374_aid_idx; Type: INDEX; Schema: public; Owner: zachenney
+-- Name: idx_43374_aid_idx; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX idx_43374_aid_idx ON public.movieactor USING btree (aid);
 
 
 --
--- Name: idx_43374_mid_idx; Type: INDEX; Schema: public; Owner: zachenney
+-- Name: idx_43374_mid_idx; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX idx_43374_mid_idx ON public.movieactor USING btree (mid);
 
 
 --
--- Name: idx_43377_gid_idx; Type: INDEX; Schema: public; Owner: zachenney
+-- Name: idx_43377_gid_idx; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX idx_43377_gid_idx ON public.moviegenre USING btree (gid);
 
 
 --
--- Name: idx_43377_mid_idx; Type: INDEX; Schema: public; Owner: zachenney
+-- Name: idx_43377_mid_idx; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX idx_43377_mid_idx ON public.moviegenre USING btree (mid);
 
 
 --
--- Name: idx_43380_mid_idx; Type: INDEX; Schema: public; Owner: zachenney
+-- Name: idx_43380_mid_idx; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX idx_43380_mid_idx ON public.movierating USING btree (mid);
 
 
 --
--- Name: idx_43380_rid_idx; Type: INDEX; Schema: public; Owner: zachenney
+-- Name: idx_43380_rid_idx; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX idx_43380_rid_idx ON public.movierating USING btree (rid);
 
 
 --
--- Name: idx_43385_rid_unique; Type: INDEX; Schema: public; Owner: zachenney
+-- Name: idx_43385_rid_unique; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE UNIQUE INDEX idx_43385_rid_unique ON public.rating USING btree (rid);
 
 
 --
--- Name: idx_43385_uid_idx; Type: INDEX; Schema: public; Owner: zachenney
+-- Name: idx_43385_uid_idx; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX idx_43385_uid_idx ON public.rating USING btree (uid);
 
 
 --
--- Name: idx_43391_uid_unique; Type: INDEX; Schema: public; Owner: zachenney
+-- Name: idx_43391_uid_unique; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE UNIQUE INDEX idx_43391_uid_unique ON public.users USING btree (uid);
 
 
 --
--- Name: idx_43391_username_unique; Type: INDEX; Schema: public; Owner: zachenney
+-- Name: idx_43391_username_unique; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE UNIQUE INDEX idx_43391_username_unique ON public.users USING btree (username);
 
 
 --
--- Name: movieactor aid; Type: FK CONSTRAINT; Schema: movierank; Owner: zachenney
+-- Name: movieactor aid; Type: FK CONSTRAINT; Schema: movierank; Owner: postgres
 --
 
 ALTER TABLE ONLY movierank.movieactor
@@ -1248,7 +1248,7 @@ ALTER TABLE ONLY movierank.movieactor
 
 
 --
--- Name: movie did; Type: FK CONSTRAINT; Schema: movierank; Owner: zachenney
+-- Name: movie did; Type: FK CONSTRAINT; Schema: movierank; Owner: postgres
 --
 
 ALTER TABLE ONLY movierank.movie
@@ -1256,7 +1256,7 @@ ALTER TABLE ONLY movierank.movie
 
 
 --
--- Name: movie gid; Type: FK CONSTRAINT; Schema: movierank; Owner: zachenney
+-- Name: movie gid; Type: FK CONSTRAINT; Schema: movierank; Owner: postgres
 --
 
 ALTER TABLE ONLY movierank.movie
@@ -1264,7 +1264,7 @@ ALTER TABLE ONLY movierank.movie
 
 
 --
--- Name: movieactor mid; Type: FK CONSTRAINT; Schema: movierank; Owner: zachenney
+-- Name: movieactor mid; Type: FK CONSTRAINT; Schema: movierank; Owner: postgres
 --
 
 ALTER TABLE ONLY movierank.movieactor
@@ -1272,7 +1272,7 @@ ALTER TABLE ONLY movierank.movieactor
 
 
 --
--- Name: movierating rid; Type: FK CONSTRAINT; Schema: movierank; Owner: zachenney
+-- Name: movierating rid; Type: FK CONSTRAINT; Schema: movierank; Owner: postgres
 --
 
 ALTER TABLE ONLY movierank.movierating
@@ -1280,7 +1280,7 @@ ALTER TABLE ONLY movierank.movierating
 
 
 --
--- Name: movierating rmid; Type: FK CONSTRAINT; Schema: movierank; Owner: zachenney
+-- Name: movierating rmid; Type: FK CONSTRAINT; Schema: movierank; Owner: postgres
 --
 
 ALTER TABLE ONLY movierank.movierating
@@ -1288,7 +1288,7 @@ ALTER TABLE ONLY movierank.movierating
 
 
 --
--- Name: rating uid; Type: FK CONSTRAINT; Schema: movierank; Owner: zachenney
+-- Name: rating uid; Type: FK CONSTRAINT; Schema: movierank; Owner: postgres
 --
 
 ALTER TABLE ONLY movierank.rating
@@ -1296,7 +1296,7 @@ ALTER TABLE ONLY movierank.rating
 
 
 --
--- Name: movieactor aid; Type: FK CONSTRAINT; Schema: public; Owner: zachenney
+-- Name: movieactor aid; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.movieactor
@@ -1304,7 +1304,7 @@ ALTER TABLE ONLY public.movieactor
 
 
 --
--- Name: movie did; Type: FK CONSTRAINT; Schema: public; Owner: zachenney
+-- Name: movie did; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.movie
@@ -1312,7 +1312,7 @@ ALTER TABLE ONLY public.movie
 
 
 --
--- Name: moviegenre gid; Type: FK CONSTRAINT; Schema: public; Owner: zachenney
+-- Name: moviegenre gid; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.moviegenre
@@ -1320,7 +1320,7 @@ ALTER TABLE ONLY public.moviegenre
 
 
 --
--- Name: moviegenre mid; Type: FK CONSTRAINT; Schema: public; Owner: zachenney
+-- Name: moviegenre mid; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.moviegenre
@@ -1328,7 +1328,7 @@ ALTER TABLE ONLY public.moviegenre
 
 
 --
--- Name: movieactor mvid; Type: FK CONSTRAINT; Schema: public; Owner: zachenney
+-- Name: movieactor mvid; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.movieactor
@@ -1336,7 +1336,7 @@ ALTER TABLE ONLY public.movieactor
 
 
 --
--- Name: movierating rid; Type: FK CONSTRAINT; Schema: public; Owner: zachenney
+-- Name: movierating rid; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.movierating
@@ -1344,7 +1344,7 @@ ALTER TABLE ONLY public.movierating
 
 
 --
--- Name: movierating rmid; Type: FK CONSTRAINT; Schema: public; Owner: zachenney
+-- Name: movierating rmid; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.movierating
@@ -1352,7 +1352,7 @@ ALTER TABLE ONLY public.movierating
 
 
 --
--- Name: rating uid; Type: FK CONSTRAINT; Schema: public; Owner: zachenney
+-- Name: rating uid; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.rating
