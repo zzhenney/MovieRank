@@ -8,7 +8,7 @@ const db = require(process.env.PWD + '/db.js')
 
 
 router.get('/', (req, res, next)=>{
-    req.session.backURL = req.header('Referer')
+    //req.session.backURL = req.header('Referer')
     if(req.session.user){
         console.log(req.session.user)
         
@@ -16,14 +16,14 @@ router.get('/', (req, res, next)=>{
         res.render('index', {user: req.session.user})
     }
     else {
-  res.render('login', {error:undefined});
+        res.render('login', {error:undefined});
     }
 });
 
 // login user
 
 router.post('/', (req, res, next)=>{
-
+    req.session.backURL = req.header('Referer')
     const username = req.body.username
     const password = req.body.password
     console.log(username)

@@ -5,7 +5,7 @@ const request = require('supertest')(app)
 
 describe("Search", function(){
     describe("Empty Search - \" \" ", () => {
-        it("should return 302 and redirects home", (done) => {
+        it("Returns 302 and redirects home", (done) => {
             request
                 .get("/search/%20")
                 .end((err, res) => {
@@ -16,7 +16,7 @@ describe("Search", function(){
         });
     });
     describe("Empty Search - \"  \"", () => {
-        it("should return 302 and redirects home", (done) => {
+        it("Returns 302 and redirects home", (done) => {
             request
                 .get("/search/%20%20")
                 .end((err, res) => {
@@ -27,7 +27,7 @@ describe("Search", function(){
         });
     });
     describe("Search Avengers", () => {
-        it("returns 200", (done) => {
+        it("Returns 200 and name equals Avengers", (done) => {
             request
                 .get("/search/Avengers")
                 .set("Accept", "application/json")
@@ -39,7 +39,7 @@ describe("Search", function(){
         });
     });
     describe("Search -1", () => {
-        it("returns 302 and redirects home", (done) => {
+        it("Returns 302 and redirects home", (done) => {
             request
                 .get("/search/-1")
                 .end((err, res) => {

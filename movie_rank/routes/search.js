@@ -5,8 +5,8 @@ const valid = require('./util/validate')
 
 router.post('/', (req, res, next) => {
 	const movieTitle = req.body.movieTitle
-	if(movieTitle.length == 0){
-		res.redirect('back')
+	if(!valid(movieTitle)){
+		return res.redirect('back')
 	}
 	res.redirect(`/search/${movieTitle}`)
 
