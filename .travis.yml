@@ -6,13 +6,11 @@ node_js:
 services:
   - postgresql
 
-<<<<<<< HEAD
 before_install:
   npm i -g npm@6.4.1;
   npm i -g mocha;
   npm i chai;
-=======
->>>>>>> f7cc2ea3910b0e68ed6fb4ac25a6560cb3a11928
+
 
 before_script:
   cd movie_rank;
