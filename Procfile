@@ -1,1 +1,1 @@
-web: ./movie_rank node .bin/www
+web: node movie_rank/.bin/www
