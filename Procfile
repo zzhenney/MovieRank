@@ -1,4 +1,1 @@
-"scripts":{
-  "start": "node movie_rank/.bin/www
-}
-
+web: node movie_rank/.bin/www
