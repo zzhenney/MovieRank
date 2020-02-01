@@ -1,1 +1,4 @@
-web: nodemon movierank/./bin/www
+"scripts":{
+  "start": "node movie_rank/.bin/www
+}
+
