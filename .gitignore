@@ -51,8 +51,11 @@ composer.lock.env
 
 
 # Node_modules #
-################
+##############
 .vscode/
 node_modules/
 
-
+# Other #
+##############
+# Preserve branch badges
+README.md 
